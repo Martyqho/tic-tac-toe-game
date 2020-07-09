@@ -1,0 +1,11 @@
+.box {
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    border: 1px solid black;
+    font-size: 17em;
+    text-align: center;
+}
+.row {
+    display: flex;
+}

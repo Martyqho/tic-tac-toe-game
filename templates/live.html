@@ -1,0 +1,72 @@
+<html>
+    <link href="index.css" rel="stylesheet">
+    <script>
+    function flip() {
+        if (currentPlayer.textContent === "X") {
+            currentPlayer.textContent = "O";
+        } else {
+            currentPlayer.textContent = "X";
+        }
+    }
+
+    function xWins() {
+        if (
+            (box1.textContent === "X" && box2.textContent === "X" && box3.textContent === "X") ||
+            (box4.textContent === "X" && box5.textContent === "X" && box6.textContent === "X") ||
+            (box7.textContent === "X" && box8.textContent === "X" && box9.textContent === "X") ||
+            (box1.textContent === "X" && box4.textContent === "X" && box7.textContent === "X") ||
+            (box2.textContent === "X" && box5.textContent === "X" && box8.textContent === "X") ||
+            (box3.textContent === "X" && box6.textContent === "X" && box9.textContent === "X") ||
+            (box1.textContent === "X" && box5.textContent === "X" && box9.textContent === "X") ||
+            (box3.textContent === "X" && box5.textContent === "X" && box7.textContent === "X")
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function oWins() {
+        if (
+            (box1.textContent === "O" && box2.textContent === "O" && box3.textContent === "O") ||
+            (box4.textContent === "O" && box5.textContent === "O" && box6.textContent === "O") ||
+            (box7.textContent === "O" && box8.textContent === "O" && box9.textContent === "O") ||
+            (box1.textContent === "O" && box4.textContent === "O" && box7.textContent === "O") ||
+            (box2.textContent === "O" && box5.textContent === "O" && box8.textContent === "O") ||
+            (box3.textContent === "O" && box6.textContent === "O" && box9.textContent === "O") ||
+            (box1.textContent === "O" && box5.textContent === "O" && box9.textContent === "O") ||
+            (box3.textContent === "O" && box5.textContent === "O" && box7.textContent === "O")
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function checkWinner() {
+        if (xWins()) {
+            setTimeout(() => alert("X is the winner!!!"), 100);
+
+        }
+        if (oWins()) {
+            setTimeout(() => alert("O is the winner!!!"), 100);
+        }
+    }
+
+    </script>
+    <p>It's <span id="currentPlayer">X</span>'s turn</p>
+    <div class="row">
+        <div class="box" id="box1"onclick="box1.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+        <div class="box" id="box2"onclick="box2.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+        <div class="box" id="box3"onclick="box3.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+    </div>
+    <div class="row">
+        <div class="box" id="box4"onclick="box4.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+        <div class="box" id="box5"onclick="box5.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+        <div class="box" id="box6"onclick="box6.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+    </div>
+    <div class="row">
+        <div class="box" id="box7"onclick="box7.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+        <div class="box" id="box8"onclick="box8.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+        <div class="box" id="box9"onclick="box9.textContent=currentPlayer.textContent; checkWinner(); flip()"></div>
+    </div>
+</html>
